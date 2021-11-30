@@ -108,15 +108,15 @@ def validate_color(color):
     :param color: color entered by user
     :return: Bool value -- True if valid, False if not
     """
-    if color[0] is not "#":
+    if color[0] != "#":
         color = color.lower()
         if color in valid_colors:
             return True
         else:
             return False
-    elif color[0] is "#":
+    elif color[0] == "#":
         color = color.upper()
-        if len(color) is not 7:
+        if len(color) != 7:
             return False
         else:
             for i in color[1:]:

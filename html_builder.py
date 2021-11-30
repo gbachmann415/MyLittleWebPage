@@ -65,9 +65,9 @@ def convert_image(image):
     has_width = len(image_lst)
     img = ""
     if has_width > 1:
-        img += "<img src='" + image_lst[0] + "' width='" + image_lst[1] + "' class='center'>"
+        img += "<img src='" + image_lst[0] + "' width='" + image_lst[1] + "' class='center' alt='" + image_lst[0] + "'>"
     elif has_width == 1:
-        img += "<img src='" + image_lst[0] + "' class='center'>"
+        img += "<img src='" + image_lst[0] + "' class='center' alt='" + image_lst[0] + "'>"
     else:
         pass
     return img
@@ -229,7 +229,7 @@ def make_link(name, site_files):
     name_link = name + ".html"
     file = open(name_link, "a")
     if len(site_files) > 1:
-        file.write("<p allign='center'>\n")
+        file.write("<p>\n")
         for i in site_files:
             file_link = i + ".html"
             lnk = "<a href='" + file_link + "'>" + i + "</a>"
